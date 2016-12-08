@@ -90,7 +90,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('dev', ['codechecks', 'sass','copy:css','copy:js','copy:images','copy:fonts','copy:other','watch']);
+  grunt.registerTask('dev', ['sass','copy:css','copy:js','copy:images','copy:fonts','copy:other','watch']);
   grunt.registerTask('codechecks',['sasslint','jscs', 'jshint']);
   grunt.registerTask('default', ['dev']);
 };
