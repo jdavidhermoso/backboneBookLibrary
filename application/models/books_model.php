@@ -33,6 +33,7 @@ class Books_model extends CI_Model
 
   public function insertBook($title = '', $author = '', $releaseDate = '', $keywords = '')
   {
+
   }
 
   public function updateBook($title = '', $author = '', $releaseDate = '', $keywords = '')

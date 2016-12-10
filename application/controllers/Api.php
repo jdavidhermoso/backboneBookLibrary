@@ -37,7 +37,6 @@ class Api extends CI_Controller
   {
     $id = $this->uri->segment(3);
     $result = $this->books_model->getBooks($id);
-
     echo json_encode($result);
   }
 
