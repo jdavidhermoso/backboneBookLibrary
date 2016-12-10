@@ -1,7 +1,7 @@
 {
-  "name": "defaultScaffolding",
+  "name": "backboneBookLibrary",
   "version": "0.0.1",
-  "description": "Default scaffolding for starting my personal projects",
+  "description": "Backbone library built following Addy Osmani's backbone book. Back-end built using Codeigniter PHP Framework.",
   "dependencies": {},
   "scripts": {},
   "author": "JDavidHermoso",

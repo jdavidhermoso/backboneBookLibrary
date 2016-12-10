@@ -1,6 +1,6 @@
 {
-  "name": "defaultScaffolding",
-  "description": "Default scaffolding for starting my personal projects",
+  "name": "backboneBookLibrary",
+  "description": "Backbone library built following Addy Osmani's backbone book. Back-end built using Codeigniter PHP Framework.",
   "main": "",
   "authors": [
     "JDavidHermoso"
