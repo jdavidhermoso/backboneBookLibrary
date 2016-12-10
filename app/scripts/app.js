@@ -5,8 +5,8 @@ $(function () {
     type: "get",
     url: "http://localhost/proyectos/booklibrary/api/books/zz",
     data: "name=someValue",
-    success: function(msg){
-      alert("Data Deleted: " + msg);
+    success: function(msg) {
+      console.log(JSON.parse(msg));
     }
   });
 

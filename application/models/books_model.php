@@ -2,20 +2,33 @@
 
 class Books_model extends CI_Model
 {
-  public function getAllBooks()
+  public function getBooks($id = '')
   {
-    $query = $this->db->query("SELECT title FROM books");
+    $where = '';
+    $limit = '';
+    $booksArr = [];
+    $book = [];
 
-    foreach ($query->result() as $row)
-    {
-      return $row->title;
+    if ($id) {
+      $where = 'WHERE id = '.$id;
+      $limit = 'LIMIT 1';
     }
 
-  }
+    $booksQuery = $this->db->query("SELECT id,title,author,releaseDate, keywords FROM books ".$where." ORDER BY id ".$limit);
 
-  public function searchBook($id)
-  {
+    foreach ($booksQuery->result() as $row)
+    {
+      $book['title'] = $row->title;
+      $book['author'] = $row->author;
+      $book['releaseDate'] = $row->releaseDate;
+      $book['keywords'] = $row->keywords;
 
+      array_push($booksArr,$book);
+
+      unset($book);
+    }
+
+    return $booksArr;
   }
 
   public function insertBook($title = '', $author = '', $releaseDate = '', $keywords = '')
