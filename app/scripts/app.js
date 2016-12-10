@@ -1,6 +1,15 @@
 var app = app || {};
 
 $(function () {
+  $.ajax({
+    type: "post",
+    url: "http://localhost/proyectos/booklibrary/api/books/zz",
+    data: "name=someValue",
+    success: function(msg){
+      alert("Data Deleted: " + msg);
+    }
+  });
+
   var books = [
     {
       title: 'Javascript: The good parts',
@@ -34,5 +43,5 @@ $(function () {
     }
   ];
 
-  new app.LibraryView(books);
+  //new app.LibraryView(books);
 });
