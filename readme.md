@@ -1,5 +1,5 @@
-# Default personal scaffolding
-## This is a personal scaffolding to clone from and start my front-end projects
+# backboneBookLibrary
+## TBackbone library built following Addy Osmani's backbone book. Back-end built using Codeigniter PHP Framework.
 
 ###### Steps for deploying
 **Previous** 
