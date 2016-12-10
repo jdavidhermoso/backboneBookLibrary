@@ -35,7 +35,7 @@ class Books_model extends CI_Model
 
   public function insertBook($title = '', $author = '', $releaseDate = '', $keywords = '')
   {
-    $booksQuery = $this->db->query("INSERT INTO `books` (`title`, `author`, `releaseDate`, `keywords`) VALUES ($title, $author, $releaseDate, $keywords)");
+    $this->db->query("INSERT INTO `books` (`title`, `author`, `releaseDate`, `keywords`) VALUES ('$title', '$author', '$releaseDate', '$keywords')");
   }
 
   public function updateBook($title = '', $author = '', $releaseDate = '', $keywords = '')

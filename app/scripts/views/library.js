@@ -33,7 +33,7 @@ app.LibraryView = Backbone.View.extend({
 
     var formData = {};
 
-    $( '#addBook div' ).children( 'input' ).each( function( i, el ) {
+    $( '#addBook div' ).children('input').each( function( i, el ) {
       if( $( el ).val() !== '' )
       {
         formData[ el.id ] = $( el ).val();
