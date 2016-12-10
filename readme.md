@@ -1,5 +1,5 @@
 # backboneBookLibrary
-## TBackbone library built following Addy Osmani's backbone book. Back-end built using Codeigniter PHP Framework.
+## Backbone library built following Addy Osmani's backbone book. Back-end built using Codeigniter PHP Framework.
 
 ###### Steps for deploying
 **Previous** 
