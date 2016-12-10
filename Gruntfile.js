@@ -28,7 +28,8 @@ module.exports = function (grunt) {
       js: {
         files: [
           {
-            expand: true, cwd: 'app/scripts', src: ['**/*.js'], dest: 'dist/scripts'},
+            expand: true, cwd: 'app/scripts', src: ['**/*.js'], dest: 'dist/scripts'
+          },
         ]
       },
       images: {
@@ -41,19 +42,32 @@ module.exports = function (grunt) {
           {expand: true, cwd: 'app/fonts', src: ['**'], dest: 'dist/fonts'},
         ]
       },
+      ci: {
+        files: [
+          {
+            expand: true, cwd: 'dist/vendors/codeigniter3/application', src: ['**/**'], dest: 'application',
+          },
+          {
+            expand: true, cwd: 'dist/vendors/codeigniter3/system', src: ['**/**'], dest: 'system',
+          },
+          {
+            expand : true, cwd : 'dist/vendors/codeigniter3/', src: ['index.php'], dest : '../../../'
+          }
+        ]
+      },
       other: {
         files: [
           {
             expand: true,
             cwd: 'app',
-            src: ['favicon.ico', 'apple-touch-icon.png', 'index.html', 'robots.txt'],
+            src: ['favicon.ico', 'apple-touch-icon.png', 'robots.txt'],
             dest: 'dist'
           },
         ],
       }
     },
     watch: {
-      files: ['app/styles/**/*.scss','app/scripts/**/*.js','app/index.html'],
+      files: ['app/styles/**/*.scss', 'app/scripts/**/*.js', 'app/index.html'],
       tasks: ['dev']
     },
     jscs: {
@@ -90,7 +104,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('dev', ['sass','copy:css','copy:js','copy:images','copy:fonts','copy:other','watch']);
-  grunt.registerTask('codechecks',['sasslint','jscs', 'jshint']);
+  grunt.registerTask('dev', ['sass', 'copy:css', 'copy:js', 'copy:images', 'copy:fonts', 'copy:other', 'watch']);
+  grunt.registerTask('codechecks', ['sasslint', 'jscs', 'jshint']);
   grunt.registerTask('default', ['dev']);
 };

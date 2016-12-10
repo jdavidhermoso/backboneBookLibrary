@@ -1,9 +1,12 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <title>Backbone.js Library</title>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="<?php echo CSSPATH; ?>main.css">
 </head>
 <body>
 
@@ -32,13 +35,13 @@
   <button class="delete">Delete</button>
 </script>
 
-<script src="dist/vendors/jquery/dist/jquery.min.js"></script>
-<script src="dist/vendors/underscore/underscore-min.js"></script>
-<script src="dist/vendors/backbone/backbone-min.js"></script>
-<script src="js/models/book.js"></script>
-<script src="js/collections/library.js"></script>
-<script src="js/views/book.js"></script>
-<script src="js/views/library.js"></script>
-<script src="js/app.js"></script>
+<script src="<?php echo VENDORSPATH; ?>jquery/dist/jquery.min.js"></script>
+<script src="<?php echo VENDORSPATH; ?>underscore/underscore-min.js"></script>
+<script src="<?php echo VENDORSPATH; ?>backbone/backbone-min.js"></script>
+<script src="<?php echo JSPATH; ?>models/book.js"></script>
+<script src="<?php echo JSPATH; ?>collections/library.js"></script>
+<script src="<?php echo JSPATH; ?>views/book.js"></script>
+<script src="<?php echo JSPATH; ?>views/library.js"></script>
+<script src="<?php echo JSPATH; ?>app.js"></script>
 </body>
 </html>

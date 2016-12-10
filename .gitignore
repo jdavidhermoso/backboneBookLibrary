@@ -5,3 +5,4 @@ bower_components
 .idea
 .sass-cache
 app/styles/sass-lint-report.xml
+system
