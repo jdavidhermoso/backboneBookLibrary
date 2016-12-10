@@ -2,7 +2,7 @@ var app = app || {};
 
 $(function () {
   $.ajax({
-    type: "post",
+    type: "get",
     url: "http://localhost/proyectos/booklibrary/api/books/zz",
     data: "name=someValue",
     success: function(msg){

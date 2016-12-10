@@ -35,7 +35,7 @@ class Api extends CI_Controller
 
   private function searchBooks()
   {
-    echo 'search';
+    echo $this->books_model->getAllBooks();
   }
 
   private function addBook()
