@@ -8,8 +8,8 @@ app.LibraryView = Backbone.View.extend({
   },
 
   initialize: function( initialBooks ) {
-    this.collection = new app.Library();    // UPDATED
-    this.collection.fetch({reset: true});   // NEW
+    this.collection = new app.Library();
+    this.collection.fetch({reset: true});
     this.render();
 
     this.listenTo( this.collection, 'add', this.renderBook );
@@ -22,7 +22,7 @@ app.LibraryView = Backbone.View.extend({
     }, this );
   },
 
-  renderBook: function( item ) {
+  renderBook: function(item) {
     var bookView = new app.BookView({
       model: item
     });

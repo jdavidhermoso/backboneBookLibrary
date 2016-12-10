@@ -29,7 +29,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <li><%= title %></li>
     <li><%= author %></li>
     <li><%= releaseDate %></li>
-    <li><%= keywords %></li>
+    <li>
+      <%
+        _.each( keywords, function( keyobj ) {
+      %>
+      <span><%= keyobj %></span>
+      <%
+        } );
+      %>
+    </li>
   </ul>
 
   <button class="delete">Delete</button>

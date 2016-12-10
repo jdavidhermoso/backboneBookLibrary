@@ -5,6 +5,6 @@ app.Book = Backbone.Model.extend({
     title: 'No title',
     author: 'Unknown',
     releaseDate: 'Unknown',
-    keywords: 'None'
+    keywords: []
   }
 });
