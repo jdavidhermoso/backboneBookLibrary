@@ -42,7 +42,7 @@ class Api extends CI_Controller
 
   private function addBook()
   {
-    echo 'add';
+    $this->books_model->insertBook();
   }
 
   private function updateBook()

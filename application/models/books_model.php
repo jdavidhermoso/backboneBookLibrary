@@ -33,6 +33,8 @@ class Books_model extends CI_Model
 
   public function insertBook($title = '', $author = '', $releaseDate = '', $keywords = '')
   {
+    $booksQuery = $this->db->query("INSERT INTO `books` (`id`, `title`, `author`, `releaseDate`, `keywords`) VALUES (NULL, 'skdafsda', 'asdkfjadsf', '20100101', 'dfmasdfsda')");
+
 
   }
 
