@@ -8,7 +8,6 @@ class Books_model extends CI_Model
     $limit = '';
     $booksArr = [];
     $book = [];
-    $keyWordsArr = [];
 
     if ($id) {
       $where = 'WHERE id = '.$id;
@@ -19,6 +18,7 @@ class Books_model extends CI_Model
 
     foreach ($booksQuery->result() as $row)
     {
+      $book['id'] = $row->id;
       $book['title'] = $row->title;
       $book['author'] = $row->author;
       $book['releaseDate'] = $row->releaseDate;
@@ -35,12 +35,7 @@ class Books_model extends CI_Model
 
   public function insertBook($title = '', $author = '', $releaseDate = '', $keywords = '')
   {
-    $booksQuery = $this->db->query("INSERT INTO `books` (`title`, `author`, `releaseDate`, `keywords`) VALUES ('skdafsda', 'asdkfjadsf', '20100101', 'dfmasdfsda')");
-
-    echo 'aa';
-    die();
-
-
+    $booksQuery = $this->db->query("INSERT INTO `books` (`title`, `author`, `releaseDate`, `keywords`) VALUES ($title, $author, $releaseDate, $keywords)");
   }
 
   public function updateBook($title = '', $author = '', $releaseDate = '', $keywords = '')
@@ -50,7 +45,7 @@ class Books_model extends CI_Model
 
   public function deleteBook($id)
   {
-
+    return $this->db->query("DELETE FROM `books` WHERE `id` = ".$id);
   }
 
 }

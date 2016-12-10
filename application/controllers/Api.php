@@ -28,7 +28,7 @@ class Api extends CI_Controller
         $this->updateBook();
         break;
       case 'delete':
-        $this->deleteBook();
+        $this->removeBook();
         break;
     }
   }
@@ -42,6 +42,7 @@ class Api extends CI_Controller
 
   private function addBook()
   {
+    echo var_dump($_POST);
     $this->books_model->insertBook();
   }
 
@@ -50,9 +51,10 @@ class Api extends CI_Controller
     echo 'update';
   }
 
-  private function deleteBook()
+  private function removeBook()
   {
-    echo 'delete';
+    $id = $this->uri->segment(3);
+    echo $this->books_model->deleteBook($id);
   }
 
   private function getRequestType()
