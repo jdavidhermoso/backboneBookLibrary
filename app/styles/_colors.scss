@@ -5,7 +5,7 @@
   i, a, span {
     color: $second_color_dark;
   }
-  &:hover {
+  &:hover, &:focus {
     background-color: $main_color_light;
   }
 }
@@ -17,12 +17,12 @@
   i, a, span {
     color: $main_color_dark;
   }
-  &:hover {
+  &:hover, &:focus {
     background-color: $second_color_light;
   }
 }
 input.bl-input.bl-input-main-color {
-  &[type=text]:focus {
+  &[type=text]:focus, &[type=text].valid {
       border-bottom: 1px solid $main_color_dark;
       box-shadow: 0 1px 0 0 $main_color_dark;
     }

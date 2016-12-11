@@ -4,7 +4,7 @@
   color: #d3a625; }
   .bl-btn.bl-main-color-btn i, .bl-btn.bl-main-color-btn a, .bl-btn.bl-main-color-btn span {
     color: #d3a625; }
-  .bl-btn.bl-main-color-btn:hover {
+  .bl-btn.bl-main-color-btn:hover, .bl-btn.bl-main-color-btn:focus {
     background-color: #ae0001; }
 
 .bl-btn.bl-second-color-btn {
@@ -13,10 +13,10 @@
   color: #740001; }
   .bl-btn.bl-second-color-btn i, .bl-btn.bl-second-color-btn a, .bl-btn.bl-second-color-btn span {
     color: #740001; }
-  .bl-btn.bl-second-color-btn:hover {
+  .bl-btn.bl-second-color-btn:hover, .bl-btn.bl-second-color-btn:focus {
     background-color: #eeba30; }
 
-input.bl-input.bl-input-main-color[type=text]:focus {
+input.bl-input.bl-input-main-color[type=text]:focus, input.bl-input.bl-input-main-color[type=text].valid {
   border-bottom: 1px solid #740001;
   box-shadow: 0 1px 0 0 #740001; }
 
@@ -30,8 +30,7 @@ body {
 
 .bl-addbook-form.modal {
   max-height: 90%;
-  padding: 15px;
-  z-index: 20000 !important; }
+  padding: 15px; }
   @media only screen and (min-width: 601px) {
     .bl-addbook-form.modal {
       display: block;
@@ -59,12 +58,13 @@ body {
   margin-top: 0; }
   .bl-book-container .bl-book-image {
     display: block;
+    height: 150px;
     max-width: 100%;
     margin: 0 auto; }
   .bl-book-container .bl-book-desc li {
     height: 20px; }
 
 .toast {
-  z-index: 10000; }
+  z-index: 20000; }
 
 /*# sourceMappingURL=main.css.map */

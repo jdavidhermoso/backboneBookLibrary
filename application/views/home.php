@@ -25,10 +25,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="file-field input-field">
             <div class="btn bl-btn bl-main-color-btn col s12">
               <span> Cover Image </span>
-              <input id="coverImage" type="file"/>
+              <input class="bl-avoid-formadata" id="coverImage" type="file"/>
             </div>
             <div class="bl-file-name-input">
-              <input class="bl-input bl-input-main-color file-path validate bl-input type="text">
+              <input class="bl-input bl-input-main-color file-path validate" id="coverImagePath" type="text">
             </div>
           </div>
           <div class="input-field">
@@ -81,7 +81,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <button class="bl-btn bl-second-color-btn delete">Delete</button>
   </div>
 </script>
-
 <script src="<?php echo VENDORSPATH; ?>jquery/dist/jquery.min.js"></script>
 <script src="<?php echo VENDORSPATH; ?>underscore/underscore-min.js"></script>
 <script src="<?php echo VENDORSPATH; ?>backbone/backbone-min.js"></script>

@@ -14,7 +14,7 @@ class Books_model extends CI_Model
       $limit = 'LIMIT 1';
     }
 
-    $booksQuery = $this->db->query("SELECT id,title,author,releaseDate, keywords FROM books ".$where." ORDER BY id ".$limit);
+    $booksQuery = $this->db->query("SELECT id,title,author,releaseDate, keywords, coverImage FROM books ".$where." ORDER BY id ".$limit);
 
     foreach ($booksQuery->result() as $row)
     {
@@ -24,6 +24,7 @@ class Books_model extends CI_Model
       $book['releaseDate'] = $row->releaseDate;
       $keyWordsArr = explode(',', $row->keywords);
       $book['keywords'] = array_map('trim', $keyWordsArr);
+      $book['coverImage'] = $row->coverImage;
 
       array_push($booksArr,$book);
 
@@ -33,9 +34,9 @@ class Books_model extends CI_Model
     return $booksArr;
   }
 
-  public function insertBook($title = '', $author = '', $releaseDate = '', $keywords = '')
+  public function insertBook($title = '', $author = '', $releaseDate = '', $keywords = '', $coverImage = '')
   {
-    $this->db->query("INSERT INTO `books` (`title`, `author`, `releaseDate`, `keywords`) VALUES ('$title', '$author', '$releaseDate', '$keywords')");
+    return $this->db->query("INSERT INTO `books` (`title`, `author`, `releaseDate`, `keywords`,`coverImage`) VALUES ('$title', '$author', '$releaseDate', '$keywords', '$coverImage')");
   }
 
   public function updateBook($title = '', $author = '', $releaseDate = '', $keywords = '')

@@ -47,8 +47,9 @@ class Api extends CI_Controller
     $author = $post_params['author'];
     $keywords = $post_params['keywords'];
     $releaseDate = $post_params['releaseDate'];
+    $coverImage = $post_params['coverImage'];
 
-    $this->books_model->insertBook($title, $author, $releaseDate, $keywords);
+    $this->books_model->insertBook($title, $author, $releaseDate, $keywords, $coverImage);
 
     $response = array('status' => 'OK');
 

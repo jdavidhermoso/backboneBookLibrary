@@ -16,7 +16,6 @@ body {
   &.modal {
     max-height: 90%;
     padding: 15px;
-    z-index: 20000 !important;
     @media only screen and (min-width: 601px) {
       display: block;
       position: relative;
@@ -38,19 +37,20 @@ body {
 }
 
 .z-depth-4, .modal {
-  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
 }
 
 .bl-book-container {
 
   .bl-book {
-    @include transparentizeBG($main_r_light,$main_g_light,$main_b_light,0.8);
+    @include transparentizeBG($main_r_light, $main_g_light, $main_b_light, 0.8);
     color: #ffffff;
     padding: 15px;
     margin-top: 0;
 
     &-image {
       display: block;
+      height: 150px;
       max-width: 100%;
       margin: 0 auto;
     }
@@ -65,5 +65,5 @@ body {
 }
 
 .toast {
-  z-index: 10000;
+  z-index: 20000;
 }
