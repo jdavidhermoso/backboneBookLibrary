@@ -1,56 +1,15 @@
-body {
-  background-color: #eee; }
+.bl-main-container {
+  width: 90%;
+  max-width: 90%;
+  margin: 0 auto; }
 
-.bookContainer {
-  outline: 1px solid #aaa;
-  width: 350px;
-  height: 130px;
-  background-color: #fff;
-  float: left;
-  margin: 5px; }
-
-.bookContainer img {
-  float: left;
-  margin: 10px; }
-
-.bookContainer ul {
-  list-style-type: none;
-  margin-bottom: 0; }
-
-.bookContainer button {
-  float: right;
-  margin: 10px; }
-
-#addBook label {
-  width: 100px;
-  margin-right: 10px;
-  text-align: right;
-  line-height: 25px; }
-
-#addBook label, #addBook input {
-  display: block;
-  margin-bottom: 10px;
-  float: left; }
-
-#addBook label[for="title"], #addBook label[for="releaseDate"] {
-  clear: both; }
-
-#addBook button {
-  display: block;
-  margin: 5px 20px 10px 10px;
-  float: right;
-  clear: both; }
-
-#addBook div {
-  width: 550px; }
-
-#addBook div:after {
-  content: "";
-  display: block;
-  height: 0;
-  visibility: hidden;
-  clear: both;
-  font-size: 0;
-  line-height: 0; }
+.bl-book-container .bl-book {
+  padding: 15px;
+  margin-top: 1rem; }
+  .bl-book-container .bl-book-image {
+    display: block;
+    margin: 0 auto; }
+  .bl-book-container .bl-book-desc li {
+    height: 20px; }
 
 /*# sourceMappingURL=main.css.map */

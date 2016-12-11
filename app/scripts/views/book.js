@@ -1,7 +1,7 @@
 var app = app || {};
 app.BookView = Backbone.View.extend({
   tagName: 'div',
-  className: 'bookContainer',
+  className: 'bl-book-container col s12 m3 l3',
   template: _.template( $( '#bookTemplate' ).html() ),
   events: {
     'click .delete': 'deleteBook'
@@ -11,7 +11,6 @@ app.BookView = Backbone.View.extend({
     return this;
   },
   deleteBook: function() {
-    console.log(this.model);
     this.model.destroy();
     this.remove();
   },
