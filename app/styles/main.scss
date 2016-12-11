@@ -4,7 +4,31 @@
   margin: 0 auto;
 }
 
-.bl-addbook-container {
+.bl-addbook-form.modal {
+  max-height: 90%;
+  padding: 15px;
+  z-index: 20000!important;
+  @media only screen and (min-width: 601px) {
+    display: block;
+    position: relative;
+    background-color: #ffffff;
+    width: auto;
+  }
+}
+
+.bl-addbook-float-btn {
+  display: block;
+  position: fixed;
+  top: 90%;
+  left: 80%;
+  z-index: 20000;
+  @media only screen and (min-width: 601px) {
+    display: none;
+  }
+}
+
+.z-depth-4, .modal {
+  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.3);
 }
 
 .bl-book-container {
@@ -25,4 +49,7 @@
     }
   }
 
+}
+.toast {
+  z-index: 10000;
 }

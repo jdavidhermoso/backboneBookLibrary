@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta charset="UTF-8"/>
   <title>Backbone.js Library</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo CSSPATH; ?>main.css">
   <link rel="stylesheet" href="<?php echo VENDORSPATH; ?>materialize/dist/css/materialize.min.css">
 </head>
@@ -20,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div id="book_library">
     <div class="row">
       <div class="bl-addbook-container col s12 m3 l3">
-        <form class="bl-addbook-form" id="add_book" action="#">
+        <form class="bl-addbook-form modal" id="add_book" action="#">
           <div class="file-field input-field">
             <div class="btn col s12">
               <span> Cover Image </span>
@@ -56,7 +57,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
 
     </div>
-
+    <div class="bl-addbook-float-btn" id="show_addbook_form">
+      <a class="btn-floating btn-large waves-effect waves-light red">
+        <i class="material-icons">add</i>
+      </a>
+    </div>
   </div>
 </main>
 <script id="bookTemplate" type="text/template">
