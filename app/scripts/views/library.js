@@ -2,12 +2,10 @@ var app = app || {};
 
 app.LibraryView = Backbone.View.extend({
   el: '#book_library',
-
   events: {
     'click #add': 'addBook',
     'click #show_addbook_form': 'openAddBookForm'
   },
-
   initialize: function () {
     this.collection = new app.Library();
     this.collection.fetch({reset: true});
@@ -16,7 +14,6 @@ app.LibraryView = Backbone.View.extend({
     this.listenTo(this.collection, 'add', this.renderBook);
     this.listenTo(this.collection, 'reset', this.render); // NEW
   },
-
   render: function () {
     $("#add_book").modal();
     $('.datepicker').pickadate({
@@ -27,7 +24,6 @@ app.LibraryView = Backbone.View.extend({
       this.renderBook(item);
     }, this);
   },
-
   renderBook: function (item) {
     var bookView = new app.BookView({
       model: item
@@ -42,14 +38,14 @@ app.LibraryView = Backbone.View.extend({
         formData[el.id] = $(el).val();
       }
     });
-
-
     this.collection.create(formData, {
       success: this.successAddedBook,
       error: this.errorAddingBook
     });
+    if (this.isModalForm()) {
+      this.closeAddBookForm();
+    }
 
-    this.closeAddBookForm();
   },
   openAddBookForm: function () {
     $("#add_book").modal('open');
@@ -57,10 +53,13 @@ app.LibraryView = Backbone.View.extend({
   closeAddBookForm: function () {
     $("#add_book").modal('close');
   },
-  successAddedBook: function() {
+  successAddedBook: function () {
     Materialize.toast('Book added!', 3000)
   },
-  errorAddingBook: function() {
+  errorAddingBook: function () {
     Materialize.toast('Something went wrong!', 3000)
+  },
+  isModalForm: function () {
+    return window.screen.availWidth  < 601;
   }
 });

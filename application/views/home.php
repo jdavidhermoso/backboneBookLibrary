@@ -20,47 +20,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <main class="bl-main-container">
   <div id="book_library">
     <div class="row">
-      <div class="bl-addbook-container col s12 m3 l3">
+      <div class="bl-addbook-container col s12 m4 l3">
         <form class="bl-addbook-form modal" id="add_book" action="#">
           <div class="file-field input-field">
-            <div class="btn col s12">
+            <div class="btn bl-btn bl-main-color-btn col s12">
               <span> Cover Image </span>
               <input id="coverImage" type="file"/>
             </div>
             <div class="bl-file-name-input">
-              <input class="file-path validate" type="text">
+              <input class="bl-input bl-input-main-color file-path validate bl-input type="text">
             </div>
           </div>
           <div class="input-field">
             <label for="title">Title: </label>
-            <input id="title" type="text"/>
+            <input class="bl-input bl-input-main-color" id="title" type="text"/>
           </div>
           <div class="input-field">
             <label for="author">Author: </label>
-            <input id="author" type="text"/>
+            <input class="bl-input bl-input-main-color" id="author" type="text"/>
           </div>
           <div class="input-field">
             <label for="releaseDate">Release date: </label>
-            <input id="releaseDate" type="text"/>
+            <input class="bl-input bl-input-main-color bl-datepicker" id="releaseDate" type="text"/>
           </div>
           <div class="input-field">
             <label for="keywords">Keywords: </label>
-            <input id="keywords" type="text"/>
+            <input class="bl-input bl-input-main-color" id="keywords" type="text"/>
           </div>
-          <button class="btn waves-effect waves-light" id="add">Add</button>
+          <button class="bl-addbook-form-btn bl-btn bl-main-color-btn btn waves-effect waves-light" id="add">Add</button>
         </form>
       </div>
-      <div class="bl-book-gallery-container col s12 m9 l9">
-        <div class="bl-book-gallery-innner" id="book_gallery">
-
-        </div>
+      <div class="bl-book-gallery-container col s12 m8 l9">
+        <div class="bl-book-gallery-innner" id="book_gallery"></div>
       </div>
-
     </div>
     <div class="bl-addbook-float-btn" id="show_addbook_form">
-      <a class="btn-floating btn-large waves-effect waves-light red">
+      <button class="btn-floating bl-btn bl-main-color-btn btn-large waves-effect waves-light">
         <i class="material-icons">add</i>
-      </a>
+      </button>
     </div>
   </div>
 </main>
@@ -68,20 +65,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="bl-book card">
     <img class="bl-book-image" src="<%= coverImage %>" title="<%= title %>" alt="<%= title %> cover image" />
     <ul class="bl-book-desc">
-      <li><%= title %></li>
-      <li><%= author %></li>
-      <li><%= releaseDate %></li>
-      <li>
+      <li class="bl-book-title"><%= title %></li>
+      <li class="bl-book-author"><%= author %></li>
+      <li class="bl-book-release-date"><%= releaseDate %></li>
+      <li class="bl-book-keywords-container">
         <%
         _.each( keywords, function( keyobj ) {
         %>
-        <span><%= keyobj %></span>
+        <span class="bl-book-keyword"><%= keyobj %></span>
         <%
         } );
         %>
       </li>
     </ul>
-    <button class="delete">Delete</button>
+    <button class="bl-btn bl-second-color-btn delete">Delete</button>
   </div>
 </script>
 

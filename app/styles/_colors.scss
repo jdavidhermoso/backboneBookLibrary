@@ -1,0 +1,29 @@
+.bl-btn.bl-main-color-btn {
+  border: 1px solid $second_color_dark;
+  background-color: $main_color_light;
+  color: $second_color_dark;
+  i, a, span {
+    color: $second_color_dark;
+  }
+  &:hover {
+    background-color: $main_color_light;
+  }
+}
+
+.bl-btn.bl-second-color-btn {
+  border: 1px solid $main_color_dark;
+  background-color: $second_color_light;
+  color: $main_color_dark;
+  i, a, span {
+    color: $main_color_dark;
+  }
+  &:hover {
+    background-color: $second_color_light;
+  }
+}
+input.bl-input.bl-input-main-color {
+  &[type=text]:focus {
+      border-bottom: 1px solid $main_color_dark;
+      box-shadow: 0 1px 0 0 $main_color_dark;
+    }
+}

@@ -1,3 +1,28 @@
+.bl-btn.bl-main-color-btn {
+  border: 1px solid #d3a625;
+  background-color: #ae0001;
+  color: #d3a625; }
+  .bl-btn.bl-main-color-btn i, .bl-btn.bl-main-color-btn a, .bl-btn.bl-main-color-btn span {
+    color: #d3a625; }
+  .bl-btn.bl-main-color-btn:hover {
+    background-color: #ae0001; }
+
+.bl-btn.bl-second-color-btn {
+  border: 1px solid #740001;
+  background-color: #eeba30;
+  color: #740001; }
+  .bl-btn.bl-second-color-btn i, .bl-btn.bl-second-color-btn a, .bl-btn.bl-second-color-btn span {
+    color: #740001; }
+  .bl-btn.bl-second-color-btn:hover {
+    background-color: #eeba30; }
+
+input.bl-input.bl-input-main-color[type=text]:focus {
+  border-bottom: 1px solid #740001;
+  box-shadow: 0 1px 0 0 #740001; }
+
+body {
+  background: #eeba30; }
+
 .bl-main-container {
   width: 90%;
   max-width: 90%;
@@ -28,10 +53,13 @@
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3); }
 
 .bl-book-container .bl-book {
+  background-color: rgba(174, 0, 1, 0.8);
+  color: #ffffff;
   padding: 15px;
-  margin-top: 1rem; }
+  margin-top: 0; }
   .bl-book-container .bl-book-image {
     display: block;
+    max-width: 100%;
     margin: 0 auto; }
   .bl-book-container .bl-book-desc li {
     height: 20px; }
