@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo CSSPATH; ?>main.css">
-  <link rel="stylesheet" href="<?php echo VENDORSPATH; ?>materialize/dist/css/materialize.min.css">
+  <link rel="stylesheet" href="<?php echo VENDORSPATH; ?>materialize/dist/css/materialize.css">
 </head>
 <body>
 <header>
@@ -39,16 +39,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <label for="author">Author: </label>
             <input class="bl-input bl-input-main-color" id="author" type="text"/>
           </div>
-          <div class="input-field">
-            <label for="releaseDate">Release date: </label>
-            <input class="bl-input bl-input-main-color bl-datepicker" id="releaseDate" type="text"/>
-          </div>
+
           <div class="input-field">
             <label for="keywords">Keywords: </label>
             <input class="bl-input bl-input-main-color" id="keywords" type="text"/>
           </div>
           <button class="bl-addbook-form-btn bl-btn bl-main-color-btn btn waves-effect waves-light" id="add">Add</button>
+          <input class="bl-input bl-input-main-color bl-datepicker" id="releaseDate" type="date"/>
         </form>
+
       </div>
       <div class="bl-book-gallery-container col s12 m8 l9">
         <div class="bl-book-gallery-innner" id="book_gallery"></div>
@@ -67,7 +66,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <ul class="bl-book-desc">
       <li class="bl-book-title"><%= title %></li>
       <li class="bl-book-author"><%= author %></li>
-      <li class="bl-book-release-date"><%= releaseDate %></li>
+      <li class="bl-book-release-date">
+        <% if (releaseDate != 0) { %>
+          <span class="bl-book-release-date"><%= releaseDate %></span>
+        <% } %>
+      </li>
       <li class="bl-book-keywords-container">
         <%
         _.each( keywords, function( keyobj ) {
@@ -84,7 +87,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo VENDORSPATH; ?>jquery/dist/jquery.min.js"></script>
 <script src="<?php echo VENDORSPATH; ?>underscore/underscore-min.js"></script>
 <script src="<?php echo VENDORSPATH; ?>backbone/backbone-min.js"></script>
-<script src="<?php echo VENDORSPATH; ?>materialize/dist/js/materialize.min.js"></script>
+<script src="<?php echo VENDORSPATH; ?>materialize/dist/js/materialize.js"></script>
 <script src="<?php echo JSPATH; ?>models/book.js"></script>
 <script src="<?php echo JSPATH; ?>collections/library.js"></script>
 <script src="<?php echo JSPATH; ?>views/book.js"></script>

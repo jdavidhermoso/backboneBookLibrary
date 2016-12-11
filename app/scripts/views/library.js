@@ -18,9 +18,9 @@ app.LibraryView = Backbone.View.extend({
   },
   render: function () {
     $("#add_book").modal();
-    $('.datepicker').pickadate({
-      selectMonths: true, // Creates a dropdown to control month
-      selectYears: 15 // Creates a dropdown of 15 years to control year
+    $('.bl-datepicker').pickadate({
+      selectMonths: true,
+      selectYears: 15
     });
     this.collection.each(function (item) {
       this.renderBook(item);
