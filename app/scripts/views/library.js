@@ -41,7 +41,7 @@ app.LibraryView = Backbone.View.extend({
     var formData = {},
       voidForm = true;
 
-    $('#add_book input').each(function (i, el) {
+    $('#add_book input:not(".bl-avoid-formadata")').each(function (i, el) {
       if ($(el).val() !== '') {
         voidForm = false;
         formData[el.id] = $(el).val();
@@ -59,6 +59,9 @@ app.LibraryView = Backbone.View.extend({
       this.alertInvalidForm();
       return;
     }
+
+    this.coverImage = '';
+
     if (this.isModalForm()) {
       this.closeAddBookForm();
     }

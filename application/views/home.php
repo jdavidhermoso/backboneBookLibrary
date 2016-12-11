@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <input class="bl-avoid-formadata" id="coverImage" type="file"/>
             </div>
             <div class="bl-file-name-input">
-              <input class="bl-input bl-input-main-color file-path validate" id="coverImagePath" type="text">
+              <input class="bl-input bl-input-main-color file-path validate bl-avoid-formadata" id="coverImagePath" type="text">
             </div>
           </div>
           <div class="input-field">
