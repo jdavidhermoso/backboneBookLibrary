@@ -44,6 +44,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <label for="keywords">Keywords: </label>
             <input class="bl-input bl-input-main-color" id="keywords" type="text"/>
           </div>
+          <div class="bl-keywords-cloud" id="keywords_cloud">
+
+          </div>
           <button class="bl-addbook-form-btn bl-btn bl-main-color-btn btn waves-effect waves-light" id="add">Add</button>
           <input class="bl-input bl-input-main-color bl-datepicker" id="releaseDate" type="date"/>
         </form>
@@ -83,6 +86,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </ul>
     <button class="bl-btn bl-second-color-btn delete">Delete</button>
   </div>
+</script>
+<script id="keywordTemplate" type="text/template">
+  <span class="bl-keyword">
+    <%= keyword %>
+    <i class="material-icons">delete</i>
+  </span>
 </script>
 <script src="<?php echo VENDORSPATH; ?>jquery/dist/jquery.min.js"></script>
 <script src="<?php echo VENDORSPATH; ?>underscore/underscore-min.js"></script>

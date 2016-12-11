@@ -13,6 +13,18 @@ body {
 }
 
 .bl-addbook-form {
+  .bl-keywords-cloud {
+    margin: 15px 0;
+    .bl-keyword {
+      padding: 5px;
+      border-radius: 5px;
+      background: blue;
+      i {
+        font-s
+      }
+    }
+  }
+
   &.modal {
     max-height: 90%;
     padding: 15px;
@@ -41,7 +53,6 @@ body {
 }
 
 .bl-book-container {
-
   .bl-book {
     @include transparentizeBG($main_r_light, $main_g_light, $main_b_light, 0.8);
     color: #ffffff;
@@ -56,6 +67,13 @@ body {
     }
 
     &-desc {
+      .bl-book-title {
+        font-size: 16px;
+      }
+      .bl-book-author {
+        font-size: 12px;
+      }
+
       li {
         height: 20px;
       }

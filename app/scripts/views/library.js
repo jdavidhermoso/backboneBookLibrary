@@ -5,7 +5,8 @@ app.LibraryView = Backbone.View.extend({
   events: {
     'click #add': 'addBook',
     'click #show_addbook_form': 'openAddBookForm',
-    'change #coverImage': 'setCoverImage'
+    'change #coverImage': 'setCoverImage',
+    'keydown #keywords': 'keywordType'
   },
   coverImage: '',
   initialize: function () {
@@ -33,13 +34,28 @@ app.LibraryView = Backbone.View.extend({
 
     this.$('#book_gallery').append(bookView.render().el);
   },
-  renderAlertModal: function () {
-    return _.template($('#alertTemplate').html());
+  renderKeywords: function (keywords) {
+    this.$('#keywords_cloud').empty();
+    var template = _.template($('#keywordTemplate').html()),
+      html;
+    console.log(keywords);
+    var keyword = {};
+    for (var i = 0, z = keywords.length; i < z; i++) {
+      keyword = {
+        keyword: keywords[i]
+      };
+      html = template(keyword);
+      this.$('#keywords_cloud').append(html);
+    }
+    this.$('#keywords')[0].value = '';
+
+    return this;
   },
   addBook: function (e) {
     e.preventDefault();
     var formData = {},
-      voidForm = true;
+      voidForm = true,
+      keywords = this.getAddedKeywords();
 
     $('#add_book input:not(".bl-avoid-formadata")').each(function (i, el) {
       if ($(el).val() !== '') {
@@ -49,6 +65,7 @@ app.LibraryView = Backbone.View.extend({
     });
 
     formData['coverImage'] = this.coverImage;
+    formData['keywords'] = keywords.join();
 
     if (!voidForm) {
       this.collection.create(formData, {
@@ -85,8 +102,8 @@ app.LibraryView = Backbone.View.extend({
   isModalForm: function () {
     return window.screen.availWidth < 601;
   },
-  maxFileSizeAlert: function(fileSize) {
-    Materialize.toast('Selected file is too big. Max. upload file is 64 kb and your file is '+fileSize+'!', 3000);
+  maxFileSizeAlert: function (fileSize) {
+    Materialize.toast('Selected file is too big. Max. upload file is 64 kb and your file is ' + fileSize + '!', 3000);
     this.$('#coverImage').val('');
     this.$('#coverImagePath').val('');
   },
@@ -106,5 +123,21 @@ app.LibraryView = Backbone.View.extend({
     if (file) {
       reader.readAsDataURL(file); //reads the data as a URL
     }
+  },
+  keywordType: function (e) {
+    var key = e.keyCode,
+      keywords = this.getAddedKeywords();;
+    if (key == 32) {
+      keywords.push(e.target.value);
+      this.renderKeywords(keywords);
+    }
+  },
+  getAddedKeywords: function() {
+    var keywords = [];
+    this.$('#keywords_cloud span').each(function(i, el) {
+      keywords.push(el.textContent.trim());
+    });
+
+    return keywords;
   }
 });
