@@ -24,9 +24,6 @@ class Api extends CI_Controller
       case 'post':
         $this->addBook();
         break;
-      case 'put':
-        $this->updateBook();
-        break;
       case 'delete':
         $this->removeBook();
         break;
@@ -45,11 +42,9 @@ class Api extends CI_Controller
     $post_params = $this->get_post();
     $title = $post_params['title'];
     $author = $post_params['author'];
-    $keywords = $post_params['keywords'];
-    $releaseDate = $post_params['releaseDate'];
     $coverImage = $post_params['coverImage'];
 
-    $this->books_model->insertBook($title, $author, $releaseDate, $keywords, $coverImage);
+    $this->books_model->insertBook($title, $author, $coverImage);
 
     $response = array('status' => 'OK');
 
@@ -61,10 +56,6 @@ class Api extends CI_Controller
     exit;
   }
 
-  private function updateBook()
-  {
-    echo 'update';
-  }
 
   private function removeBook()
   {

@@ -13,18 +13,7 @@ body {
 }
 
 .bl-addbook-form {
-  .bl-keywords-cloud {
-    margin: 15px 0;
-    .bl-keyword {
-      padding: 5px;
-      border-radius: 5px;
-      background: blue;
-      i {
-        font-s
-      }
-    }
-  }
-
+  margin: 15px 0;
   &.modal {
     max-height: 90%;
     padding: 15px;
@@ -76,10 +65,26 @@ body {
 
       li {
         height: 20px;
+        &.bl-book-keywords-container {
+          height: 40px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          span {
+            font-size: 12px;
+            display: inline-block;
+            margin: 5px 0;
+          }
+        }
       }
     }
   }
 
+}
+
+.bl-keyword {
+  padding: 5px;
+  border-radius: 5px;
+  background: blue;
 }
 
 .toast {

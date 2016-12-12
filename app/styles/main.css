@@ -1,58 +1,89 @@
-/*
-Error: Invalid CSS after "        font-s": expected "{", was "}"
-        on line 24 of app/styles/main.scss
+.bl-btn.bl-main-color-btn {
+  border: 1px solid #d3a625;
+  background-color: #ae0001;
+  color: #d3a625; }
+  .bl-btn.bl-main-color-btn i, .bl-btn.bl-main-color-btn a, .bl-btn.bl-main-color-btn span {
+    color: #d3a625; }
+  .bl-btn.bl-main-color-btn:hover, .bl-btn.bl-main-color-btn:focus {
+    background-color: #ae0001; }
 
-19:       padding: 5px;
-20:       border-radius: 5px;
-21:       background: blue;
-22:       i {
-23:         font-s
-24:       }
-25:     }
-26:   }
-27: 
-28:   &.modal {
-29:     max-height: 90%;
+.bl-btn.bl-second-color-btn {
+  border: 1px solid #740001;
+  background-color: #eeba30;
+  color: #740001; }
+  .bl-btn.bl-second-color-btn i, .bl-btn.bl-second-color-btn a, .bl-btn.bl-second-color-btn span {
+    color: #740001; }
+  .bl-btn.bl-second-color-btn:hover, .bl-btn.bl-second-color-btn:focus {
+    background-color: #eeba30; }
 
-Backtrace:
-app/styles/main.scss:24
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1179:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1115:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1110:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:654:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:724:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:674:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:663:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:655:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:724:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:674:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:666:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:655:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:724:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:674:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:666:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:655:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:724:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:674:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:663:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:655:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:647:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:673:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:666:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:123:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:39:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:403:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:414:in `run'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/exec/base.rb:52:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/exec/base.rb:19:in `parse!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/bin/sass:13:in `<top (required)>'
-/usr/local/bin/sass:23:in `load'
-/usr/local/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"        font-s\": expected \"{\", was \"}\"\A         on line 24 of app/styles/main.scss\A \A 19:       padding: 5px;\A 20:       border-radius: 5px;\A 21:       background: blue;\A 22:       i {\A 23:         font-s\A 24:       }\A 25:     }\A 26:   }\A 27: \A 28:   &.modal {\A 29:     max-height: 90%;"; }
+input.bl-input.bl-input-main-color[type=text]:focus, input.bl-input.bl-input-main-color[type=text].valid {
+  border-bottom: 1px solid #740001;
+  box-shadow: 0 1px 0 0 #740001; }
+
+body {
+  background: #eeba30; }
+
+.bl-main-container {
+  width: 90%;
+  max-width: 90%;
+  margin: 0 auto; }
+
+.bl-addbook-form {
+  margin: 15px 0; }
+  .bl-addbook-form.modal {
+    max-height: 90%;
+    padding: 15px; }
+    @media only screen and (min-width: 601px) {
+      .bl-addbook-form.modal {
+        display: block;
+        position: relative;
+        background-color: #ffffff;
+        width: auto; } }
+
+.bl-addbook-float-btn {
+  display: block;
+  position: fixed;
+  top: 90%;
+  left: 80%;
+  z-index: 20000; }
+  @media only screen and (min-width: 601px) {
+    .bl-addbook-float-btn {
+      display: none; } }
+
+.z-depth-4, .modal {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3); }
+
+.bl-book-container .bl-book {
+  background-color: rgba(174, 0, 1, 0.8);
+  color: #ffffff;
+  padding: 15px;
+  margin-top: 0; }
+  .bl-book-container .bl-book-image {
+    display: block;
+    height: 150px;
+    max-width: 100%;
+    margin: 0 auto; }
+  .bl-book-container .bl-book-desc .bl-book-title {
+    font-size: 16px; }
+  .bl-book-container .bl-book-desc .bl-book-author {
+    font-size: 12px; }
+  .bl-book-container .bl-book-desc li {
+    height: 20px; }
+    .bl-book-container .bl-book-desc li.bl-book-keywords-container {
+      height: 40px;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+      .bl-book-container .bl-book-desc li.bl-book-keywords-container span {
+        font-size: 12px;
+        display: inline-block;
+        margin: 5px 0; }
+
+.bl-keyword {
+  padding: 5px;
+  border-radius: 5px;
+  background: blue; }
+
+.toast {
+  z-index: 20000; }
+
+/*# sourceMappingURL=main.css.map */
