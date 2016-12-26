@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-12-2016 a las 00:03:09
+-- Tiempo de generación: 26-12-2016 a las 13:39:45
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.23
 
@@ -30,7 +30,7 @@ CREATE TABLE `books` (
   `id` int(4) NOT NULL,
   `title` varchar(500) NOT NULL,
   `author` varchar(250) NOT NULL,
-  `coverImage` blob NOT NULL
+  `coverImage` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
