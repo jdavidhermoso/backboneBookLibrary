@@ -62,7 +62,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </main>
 <script id="bookTemplate" type="text/template">
   <div class="bl-book card">
-    <img class="bl-book-image" src="<%= coverImage %>" title="<%= title %>" alt="<%= title %> cover image"/>
+    <img class="bl-book-image" src="<%= coverImage || 'dist/images/no-cover-pic.jpg' %>" title="<%= title %>" alt="<%= title %> cover image"/>
     <ul class="bl-book-desc">
       <li class="bl-book-title"><%= title %></li>
       <li class="bl-book-author"><%= author %></li>
