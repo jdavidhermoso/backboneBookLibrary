@@ -5,6 +5,9 @@
 body {
   background: #eeba30;
 }
+.bl-hidden {
+  display: none;
+}
 
 .bl-main-container {
   width: 90%;
@@ -89,4 +92,15 @@ body {
 
 .toast {
   z-index: 20000;
+}
+
+.bl-addbook-uploading-spinner {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 10%;
+  right: 10%;
+  img {
+    max-width: 100%;
+  }
 }
