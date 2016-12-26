@@ -51,7 +51,7 @@ app.LibraryView = Backbone.View.extend({
       var that = this;
       this.collection.create(formData, {
         success: function() { that.successAddedBook(that) },
-        error: this.errorAddingBook
+        error: function() { that.errorAddingBook(that) },
       });
       this.toggleUploadingSpinner();
     } else {
@@ -75,8 +75,10 @@ app.LibraryView = Backbone.View.extend({
     ctx.$('#add_book')[0].reset();
     ctx.toggleUploadingSpinner();
   },
-  errorAddingBook: function () {
+  errorAddingBook: function (ctx) {
     Materialize.toast('Something went wrong!', 3000)
+    ctx.$('#add_book')[0].reset();
+    ctx.toggleUploadingSpinner();
   },
   alertInvalidForm: function () {
     var $toastContent = $('<span>Please, fill at least one field!</span>');
