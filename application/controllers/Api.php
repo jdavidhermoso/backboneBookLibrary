@@ -7,7 +7,7 @@ class Api extends CI_Controller
   {
     parent::__construct();
 
-    $this->load->model("books_model");
+    $this->load->model("Books_model");
   }
 
   public function index()
@@ -33,7 +33,7 @@ class Api extends CI_Controller
   private function searchBooks()
   {
     $id = $this->uri->segment(3);
-    $result = $this->books_model->getBooks($id);
+    $result = $this->Books_model->getBooks($id);
     echo json_encode($result);
   }
 
@@ -44,7 +44,7 @@ class Api extends CI_Controller
     $author = $post_params['author'];
     $coverImage = $post_params['coverImage'];
 
-    $this->books_model->insertBook($title, $author, $coverImage);
+    $this->Books_model->insertBook($title, $author, $coverImage);
 
     $response = array('status' => 'OK');
 
@@ -60,7 +60,7 @@ class Api extends CI_Controller
   private function removeBook()
   {
     $id = $this->uri->segment(3);
-    echo $this->books_model->deleteBook($id);
+    echo $this->Books_model->deleteBook($id);
   }
 
   private function getRequestType()
