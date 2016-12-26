@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="file-field input-field">
             <div class="btn bl-btn bl-main-color-btn col s12">
               <span> Cover Image </span>
-              <input class="bl-avoid-formadata" id="coverImage" type="file"/>
+              <input class="bl-avoid-formadata" id="coverImage" type="file" accept="image/*" />
             </div>
             <div class="bl-file-name-input">
               <input class="bl-input bl-input-main-color file-path validate bl-avoid-formadata" id="coverImagePath"
@@ -55,6 +55,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <i class="material-icons">add</i>
       </button>
     </div>
+    <div class="bl-addbook-uploading-spinner bl-hidden" id="uploading_spinner">
+      <img src="/dist/images/spinner.gif" alt="Wait, please!" title="Wait until image is uploaded, please!">
+    </div>
   </div>
 </main>
 <script id="bookTemplate" type="text/template">
@@ -70,6 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo VENDORSPATH; ?>jquery/dist/jquery.min.js"></script>
 <script src="<?php echo VENDORSPATH; ?>underscore/underscore-min.js"></script>
 <script src="<?php echo VENDORSPATH; ?>backbone/backbone-min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>-->
 <script src="<?php echo VENDORSPATH; ?>materialize/dist/js/materialize.js"></script>
 <script src="<?php echo JSPATH; ?>models/book.js"></script>
 <script src="<?php echo JSPATH; ?>collections/library.js"></script>
