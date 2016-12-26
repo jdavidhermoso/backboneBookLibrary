@@ -41,20 +41,25 @@ app.LibraryView = Backbone.View.extend({
         formData[el.id] = $(el).val();
       }
     });
-    formData['coverImage'] = this.coverImage;
+    if (this.coverImage) {
+      formData['coverImage'] = this.coverImage;
+    }
+
+
 
     if (!voidForm) {
+      var that = this;
       this.collection.create(formData, {
-        success: this.successAddedBook,
+        success: function() { that.successAddedBook(that) },
         error: this.errorAddingBook
       });
+      this.toggleUploadingSpinner();
     } else {
       this.alertInvalidForm();
       return;
     }
 
     this.coverImage = '';
-
     if (this.isModalForm()) {
       this.closeAddBookForm();
     }
@@ -65,9 +70,10 @@ app.LibraryView = Backbone.View.extend({
   closeAddBookForm: function () {
     $("#add_book").modal('close');
   },
-  successAddedBook: function () {
+  successAddedBook: function (ctx) {
     Materialize.toast('Book added!', 3000);
-    this.$('#add_book').reset();
+    ctx.$('#add_book')[0].reset();
+    ctx.toggleUploadingSpinner();
   },
   errorAddingBook: function () {
     Materialize.toast('Something went wrong!', 3000)
@@ -79,8 +85,8 @@ app.LibraryView = Backbone.View.extend({
   isModalForm: function () {
     return window.screen.availWidth < 601;
   },
-  maxFileSizeAlert: function (fileSize) {
-    Materialize.toast('Selected file is too big. Max. upload file is 64 kb and your file is ' + fileSize + ' bytes!', 3000);
+  maxFileSizeAlert: function () {
+    Materialize.toast('Selected file is too big. Max. upload file is 1 MB', 3000);
     this.$('#coverImage').val('');
     this.$('#coverImagePath').val('');
   },
@@ -90,8 +96,8 @@ app.LibraryView = Backbone.View.extend({
       view = this;
 
     reader.onloadend = function () {
-      if (file.size > 65535) {
-        view.maxFileSizeAlert(file.size);
+      if (file.size > 1000000) {
+        view.maxFileSizeAlert();
         return;
       }
       view.coverImage = reader.result;
@@ -100,5 +106,8 @@ app.LibraryView = Backbone.View.extend({
     if (file) {
       reader.readAsDataURL(file); //reads the data as a URL
     }
+  },
+  toggleUploadingSpinner: function() {
+    this.$('.bl-addbook-uploading-spinner').hasClass('bl-hidden') ? this.$('.bl-addbook-uploading-spinner').removeClass('bl-hidden') : this.$('.bl-addbook-uploading-spinner').addClass('bl-hidden');
   }
 });
