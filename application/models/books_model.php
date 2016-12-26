@@ -21,8 +21,6 @@ class Books_model extends CI_Model
       $book['id'] = $row->id;
       $book['title'] = $row->title;
       $book['author'] = $row->author;
-
-
       $book['coverImage'] = $row->coverImage;
 
       array_push($booksArr,$book);
