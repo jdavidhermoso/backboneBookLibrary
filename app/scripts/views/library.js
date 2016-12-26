@@ -70,15 +70,17 @@ app.LibraryView = Backbone.View.extend({
   closeAddBookForm: function () {
     $("#add_book").modal('close');
   },
-  successAddedBook: function (ctx) {
+  successAddedBook: function (view) {
     Materialize.toast('Book added!', 3000);
-    ctx.$('#add_book')[0].reset();
-    ctx.toggleUploadingSpinner();
+    view.$('#add_book')[0].reset();
+    view.toggleUploadingSpinner();
+    view.coverImage = '';
   },
-  errorAddingBook: function (ctx) {
+  errorAddingBook: function (view) {
     Materialize.toast('Something went wrong!', 3000)
-    ctx.$('#add_book')[0].reset();
-    ctx.toggleUploadingSpinner();
+    view.$('#add_book')[0].reset();
+    view.toggleUploadingSpinner();
+    view.coverImage = '';
   },
   alertInvalidForm: function () {
     var $toastContent = $('<span>Please, fill at least one field!</span>');
@@ -106,7 +108,9 @@ app.LibraryView = Backbone.View.extend({
     };
 
     if (file) {
-      reader.readAsDataURL(file); //reads the data as a URL
+      reader.readAsDataURL(file);
+    } else {
+      view.coverImage = '';
     }
   },
   toggleUploadingSpinner: function() {
