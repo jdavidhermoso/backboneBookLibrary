@@ -1,6 +1,7 @@
-<IfModule mod_rewrite.c>
-RewriteEngine On
+RewriteEngine on
+RewriteBase /
+
+RewriteCond $1 !^(index\.php|resources|robots\.txt|static) [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]
-</IfModule>
+RewriteRule ^(.*)$ index.php/?$1 [L,QSA]
