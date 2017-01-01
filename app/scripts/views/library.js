@@ -9,16 +9,14 @@ app.LibraryView = Backbone.View.extend({
   },
   coverImage: '',
   initialize: function () {
-    this.collection = new app.Library();
-    this.collection.fetch({reset: true});
+    app.libraryCollection.fetch({reset: true});
     this.render();
-
-    this.listenTo(this.collection, 'add', this.renderBook);
-    this.listenTo(this.collection, 'reset', this.render); // NEW
+    this.listenTo(app.libraryCollection, 'reset', this.render);
   },
   render: function () {
+    this.$('#book_gallery').empty();
     $("#add_book").modal();
-    this.collection.each(function (item) {
+    app.libraryCollection.each(function (item) {
       this.renderBook(item);
     }, this);
   },
@@ -27,12 +25,15 @@ app.LibraryView = Backbone.View.extend({
       model: item
     });
 
+
     this.$('#book_gallery').append(bookView.render().el);
   },
   addBook: function (e) {
-    e.preventDefault();
     var formData = {},
-      voidForm = true;
+      voidForm = true,
+      new_model,
+      view;
+    e.preventDefault();
 
 
     $('#add_book input:not(".bl-avoid-formadata")').each(function (i, el) {
@@ -44,14 +45,13 @@ app.LibraryView = Backbone.View.extend({
     if (this.coverImage) {
       formData['coverImage'] = this.coverImage;
     }
-
-
-
     if (!voidForm) {
-      var that = this;
-      this.collection.create(formData, {
-        success: function() { that.successAddedBook(that) },
-        error: function() { that.errorAddingBook(that) },
+      view = this;
+      new_model = app.libraryCollection.create(formData, {
+        success: function() {
+          view.successAddedBook(view, new_model);
+        },
+        error: function() { view.errorAddingBook(view, new_model) },
       });
       this.toggleUploadingSpinner();
     } else {
@@ -75,9 +75,11 @@ app.LibraryView = Backbone.View.extend({
     view.$('#add_book')[0].reset();
     view.toggleUploadingSpinner();
     view.coverImage = '';
+
+    app.libraryCollection.fetch({reset: true});
   },
-  errorAddingBook: function (view) {
-    Materialize.toast('Something went wrong!', 3000)
+  errorAddingBook: function (view, model) {
+    Materialize.toast('Something went wrong!', 3000);
     view.$('#add_book')[0].reset();
     view.toggleUploadingSpinner();
     view.coverImage = '';
@@ -115,5 +117,11 @@ app.LibraryView = Backbone.View.extend({
   },
   toggleUploadingSpinner: function() {
     this.$('.bl-addbook-uploading-spinner').hasClass('bl-hidden') ? this.$('.bl-addbook-uploading-spinner').removeClass('bl-hidden') : this.$('.bl-addbook-uploading-spinner').addClass('bl-hidden');
+  },
+  hideBookLibrary: function() {
+    $('.page').removeClass('active_page');
+  },
+  showBookLibrary: function() {
+    $('#book_library').removeClass('active_page');
   }
 });

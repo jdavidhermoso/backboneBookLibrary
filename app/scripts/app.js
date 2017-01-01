@@ -1,7 +1,8 @@
 var app = app || {};
 
 $(function () {
-  new app.LibraryView();
-
-
+  app.libraryCollection = new app.Library();
+  app.library = new app.LibraryView();
+  app.router = new app.BookLibraryRouter();
+  Backbone.history.start();
 });

@@ -15,6 +15,10 @@ body {
   margin: 0 auto;
 }
 
+.page:not(.active_page) {
+  display: none;
+}
+
 .bl-addbook-form {
   margin: 15px 0;
   &.modal {

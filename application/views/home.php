@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </h1>
 </header>
 <main class="bl-main-container">
-  <div id="book_library">
+  <div id="book_library" class="page active_page">
     <div class="row">
       <div class="bl-addbook-container col s12 m4 l3">
         <form class="bl-addbook-form modal" id="add_book" action="#">
@@ -59,12 +59,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <img src="/dist/images/spinner.gif" alt="Wait, please!" title="Wait until image is uploaded, please!">
     </div>
   </div>
+  <div id="book_profile" class="page"></div>
 </main>
 <script id="bookTemplate" type="text/template">
   <div class="bl-book card">
     <img class="bl-book-image" src="<%= coverImage || 'dist/images/no-cover-pic.jpg' %>" title="<%= title %>" alt="<%= title %> cover image"/>
     <ul class="bl-book-desc">
-      <li class="bl-book-title"><%= title %></li>
+      <li class="bl-book-title" data-book-id="<%= id %>"><a href="#/book/<%= id %>"> <%= title %> </a> </li>
       <li class="bl-book-author"><%= author %></li>
     </ul>
     <button class="bl-btn bl-second-color-btn delete">Delete</button>
@@ -72,13 +73,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </script>
 <script src="<?php echo VENDORSPATH; ?>jquery/dist/jquery.min.js"></script>
 <script src="<?php echo VENDORSPATH; ?>underscore/underscore-min.js"></script>
-<script src="<?php echo VENDORSPATH; ?>backbone/backbone-min.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js"></script>
 <script src="<?php echo VENDORSPATH; ?>materialize/dist/js/materialize.js"></script>
+<script src="<?php echo JSPATH; ?>router/router.js"></script>
 <script src="<?php echo JSPATH; ?>models/book.js"></script>
 <script src="<?php echo JSPATH; ?>collections/library.js"></script>
 <script src="<?php echo JSPATH; ?>views/book.js"></script>
 <script src="<?php echo JSPATH; ?>views/library.js"></script>
+<script src="<?php echo JSPATH; ?>views/bookprofile.js"></script>
 <script src="<?php echo JSPATH; ?>app.js"></script>
 </body>
 </html>
