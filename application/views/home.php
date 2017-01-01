@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="file-field input-field">
             <div class="btn bl-btn bl-main-color-btn col s12">
               <span> Cover Image </span>
-              <input class="bl-avoid-formadata" id="coverImage" type="file" accept="image/*" />
+              <input class="bl-avoid-formadata" id="coverImage" type="file" accept="image/*"/>
             </div>
             <div class="bl-file-name-input">
               <input class="bl-input bl-input-main-color file-path validate bl-avoid-formadata" id="coverImagePath"
@@ -59,16 +59,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <img src="/dist/images/spinner.gif" alt="Wait, please!" title="Wait until image is uploaded, please!">
     </div>
   </div>
-  <div id="book_profile" class="page"></div>
+  <div id="book_profile" class="page row"></div>
 </main>
 <script id="bookTemplate" type="text/template">
   <div class="bl-book card">
-    <img class="bl-book-image" src="<%= coverImage || 'dist/images/no-cover-pic.jpg' %>" title="<%= title %>" alt="<%= title %> cover image"/>
+    <img class="bl-book-image" src="<%= coverImage || 'dist/images/no-cover-pic.jpg' %>" title="<%= title %>"
+         alt="<%= title %> cover image"/>
     <ul class="bl-book-desc">
-      <li class="bl-book-title" data-book-id="<%= id %>"><a href="#/book/<%= id %>"> <%= title %> </a> </li>
+      <li class="bl-book-title" data-book-id="<%= id %>"><a href="#/book/<%= id %>"> <%= title %> </a></li>
       <li class="bl-book-author"><%= author %></li>
     </ul>
     <button class="bl-btn bl-second-color-btn delete">Delete</button>
+  </div>
+</script>
+<script id="bookProfileTemplate" type="text/template">
+  <div class="bl-book bl-book-profile card">
+    <div class="row">
+      <div class="col s12">
+        <img class="bl-book-image" src="<%= coverImage || 'dist/images/no-cover-pic.jpg' %>" title="<%= title %>"
+             alt="<%= title %> cover image"/>
+      </div>
+      <div class="col s12">
+        <ul class="bl-book-desc">
+          <li class="bl-book-title" data-book-id="<%= id %>"><%= title %></li>
+          <li class="bl-book-author"><%= author %></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </script>
 <script src="<?php echo VENDORSPATH; ?>jquery/dist/jquery.min.js"></script>

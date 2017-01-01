@@ -122,6 +122,6 @@ app.LibraryView = Backbone.View.extend({
     $('.page').removeClass('active_page');
   },
   showBookLibrary: function() {
-    $('#book_library').removeClass('active_page');
+    $('#book_library').addClass('active_page');
   }
 });

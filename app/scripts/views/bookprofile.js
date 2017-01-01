@@ -2,8 +2,8 @@ var app = app || {};
 
 app.BookProfileView = Backbone.View.extend({
   tagName: 'div',
-  className: 'bl-book-container col s12 m6 l3',
-  template: _.template( $( '#bookTemplate' ).html() ),
+  className: 'bl-book-container col s12 m3 l3',
+  template: _.template( $( '#bookProfileTemplate' ).html() ),
   initialize: function (options) {
     var bookProfileView;
     this.collection = app.libraryCollection;
@@ -15,7 +15,7 @@ app.BookProfileView = Backbone.View.extend({
 
         if (app.libraryCollection.length) {
           bookProfileView.model = app.libraryCollection.get(bookProfileView.bookId);
-          this.$('#book_profile').append(bookProfileView.render().el);
+          this.$('#book_profile').html(bookProfileView.render().el);
         } else {
           app.router.navigateToHome();
         }

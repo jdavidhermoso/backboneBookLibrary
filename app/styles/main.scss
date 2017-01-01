@@ -5,6 +5,7 @@
 body {
   background: #eeba30;
 }
+
 .bl-hidden {
   display: none;
 }
@@ -64,31 +65,31 @@ body {
 
     &-desc {
       .bl-book-title {
-        text-overflow: ellipsis;
-        font-size: 16px;
-        overflow: hidden;
-        white-space: nowrap;
+        font-size: 30px;
+        text-align: center;
       }
       .bl-book-author {
-        font-size: 12px;
+        font-size: 20px;
+        text-align: center;
       }
-
       li {
-        height: 20px;
-        &.bl-book-keywords-container {
-          height: 40px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          span {
-            font-size: 12px;
-            display: inline-block;
-            margin: 5px 0;
-          }
-        }
+        list-style: none;
+      }
+    }
+    &:not(.bl-book-profile) {
+      .bl-book-title {
+        text-overflow: ellipsis;
+        font-size: 20px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: left;
+      }
+      .bl-book-author {
+        font-size: 15px;
+        text-align: left;
       }
     }
   }
-
 }
 
 .bl-keyword {
