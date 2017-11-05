@@ -23,10 +23,16 @@ input.bl-input.bl-input-main-color[type=text]:focus, input.bl-input.bl-input-mai
 body {
   background: #eeba30; }
 
+.bl-hidden {
+  display: none; }
+
 .bl-main-container {
   width: 90%;
   max-width: 90%;
   margin: 0 auto; }
+
+.page:not(.active_page) {
+  display: none; }
 
 .bl-addbook-form {
   margin: 15px 0; }
@@ -64,19 +70,22 @@ body {
     max-width: 100%;
     margin: 0 auto; }
   .bl-book-container .bl-book-desc .bl-book-title {
-    font-size: 16px; }
+    font-size: 30px;
+    text-align: center; }
   .bl-book-container .bl-book-desc .bl-book-author {
-    font-size: 12px; }
+    font-size: 20px;
+    text-align: center; }
   .bl-book-container .bl-book-desc li {
-    height: 20px; }
-    .bl-book-container .bl-book-desc li.bl-book-keywords-container {
-      height: 40px;
-      overflow: hidden;
-      text-overflow: ellipsis; }
-      .bl-book-container .bl-book-desc li.bl-book-keywords-container span {
-        font-size: 12px;
-        display: inline-block;
-        margin: 5px 0; }
+    list-style: none; }
+  .bl-book-container .bl-book:not(.bl-book-profile) .bl-book-title {
+    text-overflow: ellipsis;
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left; }
+  .bl-book-container .bl-book:not(.bl-book-profile) .bl-book-author {
+    font-size: 15px;
+    text-align: left; }
 
 .bl-keyword {
   padding: 5px;
@@ -85,5 +94,14 @@ body {
 
 .toast {
   z-index: 20000; }
+
+.bl-addbook-uploading-spinner {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 10%;
+  right: 10%; }
+  .bl-addbook-uploading-spinner img {
+    max-width: 100%; }
 
 /*# sourceMappingURL=main.css.map */

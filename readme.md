@@ -10,7 +10,6 @@ You need a php server. Locally, using XAMPP or remote, and importing booklibrary
 
 1. **npm install**
 2. **bower install**
-3. **grunt copy:ci**
-4. **grunt**
+3. **grunt**
 
 

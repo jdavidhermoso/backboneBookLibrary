@@ -239,7 +239,7 @@ switch (ENVIRONMENT)
   define('STATICPATH', 'dist'.DIRECTORY_SEPARATOR);
 
   // Path to vendors
-  define('VENDORSPATH', STATICPATH.'vendors'.DIRECTORY_SEPARATOR);
+  define('VENDORSPATH', STATICPATH.'node_modules'.DIRECTORY_SEPARATOR);
 
   // Path to javascript
   define('JSPATH', STATICPATH.'scripts'.DIRECTORY_SEPARATOR);

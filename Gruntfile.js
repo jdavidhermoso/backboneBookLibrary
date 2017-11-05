@@ -42,19 +42,6 @@ module.exports = function (grunt) {
           {expand: true, cwd: 'app/fonts', src: ['**'], dest: 'dist/fonts'},
         ]
       },
-      ci: {
-        files: [
-          {
-            expand: true, cwd: 'dist/vendors/codeigniter3/application', src: ['**/**'], dest: 'application',
-          },
-          {
-            expand: true, cwd: 'dist/vendors/codeigniter3/system', src: ['**/**'], dest: 'system',
-          },
-          {
-            expand : true, cwd : 'dist/vendors/codeigniter3/', src: ['index.php'], dest : '../../../'
-          }
-        ]
-      },
       other: {
         files: [
           {
